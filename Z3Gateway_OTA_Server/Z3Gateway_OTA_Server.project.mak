@@ -3,7 +3,7 @@
 # Makefile Version 15                                              #
 ####################################################################
 
-BASE_SDK_PATH = C:/Users/salma/SimplicityStudio/SDKs/gecko_sdk_2
+BASE_SDK_PATH = /home/sarahman/ota_project/gsdkv4_3_2
 UNAME:=$(shell $(POSIX_TOOL_PATH)uname -s | $(POSIX_TOOL_PATH)sed -e 's/^\(CYGWIN\).*/\1/' | $(POSIX_TOOL_PATH)sed -e 's/^\(MINGW\).*/\1/')
 ifeq ($(UNAME),MINGW)
 # Translate "C:/super" into "/C/super" for MinGW make.
