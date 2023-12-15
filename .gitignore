@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+build/
+GNU ARM v10.3.1 - Default/
