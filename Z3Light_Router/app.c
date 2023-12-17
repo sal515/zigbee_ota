@@ -265,12 +265,27 @@ void emberAfRadioNeedsCalibratingCallback(void)
  ******************************************************************************/
 void sl_button_on_change(const sl_button_t *handle)
 {
+#if 0
   if (sl_button_get_state(handle) == SL_SIMPLE_BUTTON_RELEASED) {
     sl_zigbee_event_set_active(&finding_and_binding_event);
     #ifdef SL_CATALOG_ZIGBEE_FORCE_SLEEP_AND_WAKEUP_PRESENT
     sl_zigbee_app_framework_force_wakeup();
     #endif //SL_CATALOG_ZIGBEE_FORCE_SLEEP_AND_WAKEUP_PRESENT
   }
+#else
+  if (SL_SIMPLE_BUTTON_GET_PORT(handle->context) == GPIO_PORTB
+      && SL_SIMPLE_BUTTON_GET_PIN(handle->context)
+          == 2&& sl_button_get_state(handle) == SL_SIMPLE_BUTTON_RELEASED)
+    {
+      sl_zigbee_app_debug_println("\nButton 0 is pressed");
+    }
+  else if (SL_SIMPLE_BUTTON_GET_PORT(handle->context) == GPIO_PORTB
+      && SL_SIMPLE_BUTTON_GET_PIN(handle->context)
+          == 3&& sl_button_get_state(handle) == SL_SIMPLE_BUTTON_RELEASED)
+    {
+      sl_zigbee_app_debug_println("\nButton 1 is pressed");
+    }
+#endif
 }
 #endif // SL_CATALOG_SIMPLE_BUTTON_PRESENT && SL_ZIGBEE_APP_FRAMEWORK_USE_BUTTON_TO_STAY_AWAKE == 0
 
