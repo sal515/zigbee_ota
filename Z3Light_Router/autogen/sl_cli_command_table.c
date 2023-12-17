@@ -122,6 +122,14 @@ extern "C" {
  ******************************************************************************/
 
 // Provide function declarations
+void sli_slot_manager_cli_bootload_slot(sl_cli_command_arg_t *arguments);
+void sli_slot_manager_cli_erase_slot(sl_cli_command_arg_t *arguments);
+void sli_slot_manager_cli_print_external_flash_info(sl_cli_command_arg_t *arguments);
+void sli_slot_manager_cli_read_ext_flash(sl_cli_command_arg_t *arguments);
+void sli_slot_manager_cli_print_slots_info(sl_cli_command_arg_t *arguments);
+void sli_eeprom_data_print_command(sl_cli_command_arg_t *arguments);
+void sli_eeprom_status_command(sl_cli_command_arg_t *arguments);
+void sli_eeprom_info_command(sl_cli_command_arg_t *arguments);
 void emberAfPluginIdleSleepStatusCommand(sl_cli_command_arg_t *arguments);
 void emberAfPluginIdleSleepStayAwakeCommand(sl_cli_command_arg_t *arguments);
 void emberAfPluginIdleSleepAwakeWhenNotJoinedCommand(sl_cli_command_arg_t *arguments);
@@ -198,6 +206,32 @@ void emberAfPluginNetworkSteeringSetPreconfiguredKeyCommand(sl_cli_command_arg_t
 void emberAfPluginNetworkSteeringChannelSetCommand(sl_cli_command_arg_t *arguments);
 void emberAfPluginNetworkSteeringChannelAddOrSubtractCommand(sl_cli_command_arg_t *arguments);
 void emberAfPluginNetworkSteeringChannelAddOrSubtractCommand(sl_cli_command_arg_t *arguments);
+void otaCliBootload(sl_cli_command_arg_t *arguments);
+void otaCliVerify(sl_cli_command_arg_t *arguments);
+void otaPrintClientInfo(sl_cli_command_arg_t *arguments);
+void otaStartClientCommand(sl_cli_command_arg_t *arguments);
+void otaStopClientCommand(sl_cli_command_arg_t *arguments);
+void sli_zigbee_af_ota_client_print_state(sl_cli_command_arg_t *arguments);
+void sli_zigbee_af_send_image_block_request_test(sl_cli_command_arg_t *arguments);
+void setPageRequest(sl_cli_command_arg_t *arguments);
+void otaSendUpgradeRequest(sl_cli_command_arg_t *arguments);
+void sli_zigbee_af_ota_client_disable_downgrades(sl_cli_command_arg_t *arguments);
+void sli_zigbee_af_ota_client_enable_downgrades(sl_cli_command_arg_t *arguments);
+void otaImageNotifyCommand(sl_cli_command_arg_t *arguments);
+void otaSendUpgradeCommand(sl_cli_command_arg_t *arguments);
+void sli_zigbee_af_ota_server_policy_print(sl_cli_command_arg_t *arguments);
+void setPolicy(sl_cli_command_arg_t *arguments);
+void setPolicy(sl_cli_command_arg_t *arguments);
+void setPolicy(sl_cli_command_arg_t *arguments);
+void setPolicy(sl_cli_command_arg_t *arguments);
+void setPolicy(sl_cli_command_arg_t *arguments);
+void setPolicy(sl_cli_command_arg_t *arguments);
+void sli_zigbee_af_ota_print_all_images(sl_cli_command_arg_t *arguments);
+void sli_zigbee_af_ota_image_delete(sl_cli_command_arg_t *arguments);
+void sli_zigbee_af_ota_reload_storage_device(sl_cli_command_arg_t *arguments);
+void sli_zigbee_af_ota_storage_info_print(sl_cli_command_arg_t *arguments);
+void sli_zigbee_af_ota_storage_data_print(sl_cli_command_arg_t *arguments);
+void sli_zigbee_af_ota_wipe_storage_device_command(sl_cli_command_arg_t *arguments);
 void sli_zigbee_af_reporting_cli_print(sl_cli_command_arg_t *arguments);
 void sli_zigbee_af_reporting_cli_clear(sl_cli_command_arg_t *arguments);
 void sli_zigbee_af_reporting_cli_remove(sl_cli_command_arg_t *arguments);
@@ -308,6 +342,54 @@ void rxOnStatus(sl_cli_command_arg_t *arguments);
 // Command structs. Names are in the format : cli_cmd_{command group name}_{command name}
 // In order to support hyphen in command and group name, every occurence of it while
 // building struct names will be replaced by "_hyphen_"
+static const sl_cli_command_info_t cli_cmd_slot_hyphen_manager_boot_hyphen_slot = \
+  SL_CLI_COMMAND(sli_slot_manager_cli_bootload_slot,
+                 "Boots the image in the specified slot ID.",
+                  "Storage slot number" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT32, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_slot_hyphen_manager_erase_hyphen_slot = \
+  SL_CLI_COMMAND(sli_slot_manager_cli_erase_slot,
+                 "Erases the specified slot ID.",
+                  "Storage slot number" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT32, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_slot_hyphen_manager_ext_hyphen_flash_hyphen_info = \
+  SL_CLI_COMMAND(sli_slot_manager_cli_print_external_flash_info,
+                 "Prints flash storage information.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_slot_hyphen_manager_read = \
+  SL_CLI_COMMAND(sli_slot_manager_cli_read_ext_flash,
+                 "Reads raw data from flash storage.",
+                  "Address to read" SL_CLI_UNIT_SEPARATOR "Number of bytes to read" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT32, SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_slot_hyphen_manager_slots_hyphen_info = \
+  SL_CLI_COMMAND(sli_slot_manager_cli_print_slots_info,
+                 "Prints information for all available slots.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_eeprom_data_hyphen_print = \
+  SL_CLI_COMMAND(sli_eeprom_data_print_command,
+                 "",
+                  "offset" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT32, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_eeprom_status = \
+  SL_CLI_COMMAND(sli_eeprom_status_command,
+                 "",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_eeprom_info = \
+  SL_CLI_COMMAND(sli_eeprom_info_command,
+                 "",
+                  "",
+                 {SL_CLI_ARG_END, });
+
 static const sl_cli_command_info_t cli_cmd_idle_hyphen_sleep_status = \
   SL_CLI_COMMAND(emberAfPluginIdleSleepStatusCommand,
                  "Display the sleep status",
@@ -763,6 +845,162 @@ static const sl_cli_command_info_t cli_cmd_shell_mask_1_subtract = \
                  "Subtracts a channel from either the primary or secondary channel mask of the network-steering component.",
                   "The channel mask to subtract the channel from" SL_CLI_UNIT_SEPARATOR "The channel to subtract the mask from" SL_CLI_UNIT_SEPARATOR,
                  {SL_CLI_ARG_UINT8, SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_client_bootload = \
+  SL_CLI_COMMAND(otaCliBootload,
+                 "Bootloads the image at the specified index by calling the OTA bootload callback.",
+                  "The index at which to begin bootloading the image" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_client_verify = \
+  SL_CLI_COMMAND(otaCliVerify,
+                 "Performs signature verification on the image at the specified index.",
+                  "The index at which to begin verification of the image" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_client_info = \
+  SL_CLI_COMMAND(otaPrintClientInfo,
+                 "Prints the manufacturer ID, Image Type ID, and Version information that are used when a query next image is sent to the server by the client.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_client_start = \
+  SL_CLI_COMMAND(otaStartClientCommand,
+                 "Starts the OTA client state machine. The state machine discovers the OTA server, queries for new images, downloads the images and waits for the server command to upgrade.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_client_stop = \
+  SL_CLI_COMMAND(otaStopClientCommand,
+                 "Stops the OTA state machine.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_client_status = \
+  SL_CLI_COMMAND(sli_zigbee_af_ota_client_print_state,
+                 "Prints information on the current state of the OTA client download.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_client_block_hyphen_test = \
+  SL_CLI_COMMAND(sli_zigbee_af_send_image_block_request_test,
+                 "Sends an image block request for a file the server should not have.  Test harness only (test case 9.5.6 - Missing File)",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_client_page_hyphen_request = \
+  SL_CLI_COMMAND(setPageRequest,
+                 "Can be used to dynamically turn off sending page requests on the client side, if the server doesn't support this feature.",
+                  "Boolean value turning on (1) or off (0) the page request flag" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_client_upgrade_hyphen_request = \
+  SL_CLI_COMMAND(otaSendUpgradeRequest,
+                 "Sends an UpgradeEndRequest to an OTA server.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_client_disable_hyphen_downgrades = \
+  SL_CLI_COMMAND(sli_zigbee_af_ota_client_disable_downgrades,
+                 "Disables OTA downgrades.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_client_enable_hyphen_downgrades = \
+  SL_CLI_COMMAND(sli_zigbee_af_ota_client_enable_downgrades,
+                 "Enables OTA downgrades.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_server_notify = \
+  SL_CLI_COMMAND(otaImageNotifyCommand,
+                 "Sends an OTA Image Notify message to the specified destination indicating a new version of an image is available for download.",
+                  "The node ID (can be a broadcast address) to which this OTA Notify message should be sent" SL_CLI_UNIT_SEPARATOR "Target endpoint for the OTA Notify message (only meaningful for non-broadcast target destination)" SL_CLI_UNIT_SEPARATOR "Specifies which parameters to include in the OTA Notify cluster command payload (0 = jitter value only; 1 = jitter and manufacturer id; 2 = jitter, mfr id, and device id; 3 = jitter, mfr id, device id, and firmware version)" SL_CLI_UNIT_SEPARATOR "Corresponds to QueryJitter parameter in the OTA Upgrade cluster specification. Indicates whether the client receiving Image Notify Command should send in Query Next Image Request command or not." SL_CLI_UNIT_SEPARATOR "Manufacturer ID for the image being advertised (should match the mfr ID in the OTA files header)" SL_CLI_UNIT_SEPARATOR "Image type ID for the image being advertised (should match the image type ID from the OTA files header)" SL_CLI_UNIT_SEPARATOR "Firmware version of the image being advertised (should match the version from the OTA files header)" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT16, SL_CLI_ARG_UINT8, SL_CLI_ARG_UINT8, SL_CLI_ARG_UINT8, SL_CLI_ARG_UINT16, SL_CLI_ARG_UINT16, SL_CLI_ARG_UINT32, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_server_upgrade = \
+  SL_CLI_COMMAND(otaSendUpgradeCommand,
+                 "Instructs a device to upgrade now.",
+                  "Short destination to send message" SL_CLI_UNIT_SEPARATOR "Endpoint destination to send message" SL_CLI_UNIT_SEPARATOR "Manufacturer ID for the image (0xFFFF for wildcard)" SL_CLI_UNIT_SEPARATOR "Image type for the image (0xFFFF for wildcard)" SL_CLI_UNIT_SEPARATOR "File version for the image (0xFFFFFFFF for wildcard)" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT16, SL_CLI_ARG_UINT8, SL_CLI_ARG_UINT16, SL_CLI_ARG_UINT16, SL_CLI_ARG_UINT32, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_policy_print = \
+  SL_CLI_COMMAND(sli_zigbee_af_ota_server_policy_print,
+                 "Prints the polices used by the OTA Server Policy component.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_policy_query = \
+  SL_CLI_COMMAND(setPolicy,
+                 "Sets the policy used by the OTA Server Policy component when it receives a query request from the client.",
+                  "0 Upgrade if server has newer (default), 1 Downgrade if server has older, 2       Reinstall if server has same, 3 No next version (no next image is available for download)" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_policy_upgrade = \
+  SL_CLI_COMMAND(setPolicy,
+                 "Sets the policy used by the OTA Server Policy component when it receives an upgrade end request.",
+                  "0 Upgrade Now (default), 1 Upgrade in 2       minutes, 2 Ask me later to upgrade, 3 Abort Upgrade (send default response)" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_policy_page_hyphen_req_hyphen_miss = \
+  SL_CLI_COMMAND(setPolicy,
+                 "Sets the modulus number of blocks not to respond to. This is used in testing to simulate a device that fails to receive certain blocks from an Image Page Request message.",
+                  "The block modulus number to skip sending when responding to an Image Page Request. E.g. if 2, every other block will not be sent. 0 turns the feature off." SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_policy_page_hyphen_req_hyphen_sup = \
+  SL_CLI_COMMAND(setPolicy,
+                 "Sets whether the Page Request feature is supported or not.",
+                  "1 if Page Request is supported, 0 if unsupported" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_policy_block_hyphen_request = \
+  SL_CLI_COMMAND(setPolicy,
+                 "Sets the policy used by the ota-server Policy component when it receives an image block request.",
+                  "0 Send block (default), 1 Delay download once for 2 minutes, 2 Always abort download after first block" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_policy_image_hyphen_req_hyphen_min_hyphen_period = \
+  SL_CLI_COMMAND(setPolicy,
+                 "Sets the Minimum Block Period.",
+                  "The minimum block period in milliseconds" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT16, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_storage_hyphen_common_printImages = \
+  SL_CLI_COMMAND(sli_zigbee_af_ota_print_all_images,
+                 "Prints the images.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_storage_hyphen_common_delete = \
+  SL_CLI_COMMAND(sli_zigbee_af_ota_image_delete,
+                 "Deletes the image at the specified index.",
+                  "The index at which to begin deleting the image" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_storage_hyphen_common_reload = \
+  SL_CLI_COMMAND(sli_zigbee_af_ota_reload_storage_device,
+                 "Reload the storage device.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_storage_hyphen_common_storage_hyphen_info = \
+  SL_CLI_COMMAND(sli_zigbee_af_ota_storage_info_print,
+                 "Prints information about the storage device.",
+                  "",
+                 {SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_storage_hyphen_common_data_hyphen_print = \
+  SL_CLI_COMMAND(sli_zigbee_af_ota_storage_data_print,
+                 "Prints arbitrary bytes of the OTA image on disk.",
+                  "The index of the image to print its data" SL_CLI_UNIT_SEPARATOR "The offset into the OTA image that will be printed" SL_CLI_UNIT_SEPARATOR,
+                 {SL_CLI_ARG_UINT8, SL_CLI_ARG_UINT32, SL_CLI_ARG_END, });
+
+static const sl_cli_command_info_t cli_cmd_ota_hyphen_storage_hyphen_eeprom_wipe = \
+  SL_CLI_COMMAND(sli_zigbee_af_ota_wipe_storage_device_command,
+                 "Wipes all data in the storage device.",
+                  "",
+                 {SL_CLI_ARG_END, });
 
 static const sl_cli_command_info_t cli_cmd_reporting_print = \
   SL_CLI_COMMAND(sli_zigbee_af_reporting_cli_print,
@@ -1404,6 +1642,26 @@ static const sl_cli_command_info_t cli_cmd_zll_hyphen_commissioning_rx_hyphen_on
 // Create group command tables and structs if cli_groups given
 // in template. Group name is suffixed with _group_table for tables
 // and group commands are cli_cmd_grp_( group name )
+static const sl_cli_command_entry_t slot_hyphen_manager_group_table[] = {
+  { "boot-slot", &cli_cmd_slot_hyphen_manager_boot_hyphen_slot, false },
+  { "erase-slot", &cli_cmd_slot_hyphen_manager_erase_hyphen_slot, false },
+  { "ext-flash-info", &cli_cmd_slot_hyphen_manager_ext_hyphen_flash_hyphen_info, false },
+  { "read", &cli_cmd_slot_hyphen_manager_read, false },
+  { "slots-info", &cli_cmd_slot_hyphen_manager_slots_hyphen_info, false },
+  { NULL, NULL, false },
+};
+static const sl_cli_command_info_t cli_cmd_grp_slot_hyphen_manager = \
+  SL_CLI_COMMAND_GROUP(slot_hyphen_manager_group_table, "Slot Manager related commands");
+
+static const sl_cli_command_entry_t eeprom_group_table[] = {
+  { "data-print", &cli_cmd_eeprom_data_hyphen_print, false },
+  { "status", &cli_cmd_eeprom_status, false },
+  { "info", &cli_cmd_eeprom_info, false },
+  { NULL, NULL, false },
+};
+static const sl_cli_command_info_t cli_cmd_grp_eeprom = \
+  SL_CLI_COMMAND_GROUP(eeprom_group_table, "eeprom utility related commands");
+
 static const sl_cli_command_entry_t idle_hyphen_sleep_group_table[] = {
   { "status", &cli_cmd_idle_hyphen_sleep_status, false },
   { "force-awake", &cli_cmd_idle_hyphen_sleep_force_hyphen_awake, false },
@@ -1583,6 +1841,63 @@ static const sl_cli_command_entry_t network_hyphen_steering_group_table[] = {
 static const sl_cli_command_info_t cli_cmd_grp_network_hyphen_steering = \
   SL_CLI_COMMAND_GROUP(network_hyphen_steering_group_table, "network-steering related commands.");
 
+static const sl_cli_command_entry_t ota_hyphen_client_group_table[] = {
+  { "bootload", &cli_cmd_ota_hyphen_client_bootload, false },
+  { "verify", &cli_cmd_ota_hyphen_client_verify, false },
+  { "info", &cli_cmd_ota_hyphen_client_info, false },
+  { "start", &cli_cmd_ota_hyphen_client_start, false },
+  { "stop", &cli_cmd_ota_hyphen_client_stop, false },
+  { "status", &cli_cmd_ota_hyphen_client_status, false },
+  { "block-test", &cli_cmd_ota_hyphen_client_block_hyphen_test, false },
+  { "page-request", &cli_cmd_ota_hyphen_client_page_hyphen_request, false },
+  { "upgrade-request", &cli_cmd_ota_hyphen_client_upgrade_hyphen_request, false },
+  { "disable-downgrades", &cli_cmd_ota_hyphen_client_disable_hyphen_downgrades, false },
+  { "enable-downgrades", &cli_cmd_ota_hyphen_client_enable_hyphen_downgrades, false },
+  { NULL, NULL, false },
+};
+static const sl_cli_command_info_t cli_cmd_grp_ota_hyphen_client = \
+  SL_CLI_COMMAND_GROUP(ota_hyphen_client_group_table, "ota-client related commands.");
+
+static const sl_cli_command_entry_t policy_group_table[] = {
+  { "print", &cli_cmd_policy_print, false },
+  { "query", &cli_cmd_policy_query, false },
+  { "upgrade", &cli_cmd_policy_upgrade, false },
+  { "page-req-miss", &cli_cmd_policy_page_hyphen_req_hyphen_miss, false },
+  { "page-req-sup", &cli_cmd_policy_page_hyphen_req_hyphen_sup, false },
+  { "block-request", &cli_cmd_policy_block_hyphen_request, false },
+  { "image-req-min-period", &cli_cmd_policy_image_hyphen_req_hyphen_min_hyphen_period, false },
+  { NULL, NULL, false },
+};
+static const sl_cli_command_info_t cli_cmd_grp_policy = \
+  SL_CLI_COMMAND_GROUP(policy_group_table, "policy related commands");
+
+static const sl_cli_command_entry_t ota_hyphen_server_group_table[] = {
+  { "notify", &cli_cmd_ota_hyphen_server_notify, false },
+  { "upgrade", &cli_cmd_ota_hyphen_server_upgrade, false },
+  { "policy", &cli_cmd_grp_policy, false },
+  { NULL, NULL, false },
+};
+static const sl_cli_command_info_t cli_cmd_grp_ota_hyphen_server = \
+  SL_CLI_COMMAND_GROUP(ota_hyphen_server_group_table, "ota-server related commands.");
+
+static const sl_cli_command_entry_t ota_hyphen_storage_hyphen_common_group_table[] = {
+  { "printImages", &cli_cmd_ota_hyphen_storage_hyphen_common_printImages, false },
+  { "delete", &cli_cmd_ota_hyphen_storage_hyphen_common_delete, false },
+  { "reload", &cli_cmd_ota_hyphen_storage_hyphen_common_reload, false },
+  { "storage-info", &cli_cmd_ota_hyphen_storage_hyphen_common_storage_hyphen_info, false },
+  { "data-print", &cli_cmd_ota_hyphen_storage_hyphen_common_data_hyphen_print, false },
+  { NULL, NULL, false },
+};
+static const sl_cli_command_info_t cli_cmd_grp_ota_hyphen_storage_hyphen_common = \
+  SL_CLI_COMMAND_GROUP(ota_hyphen_storage_hyphen_common_group_table, "ota-storage-common related commands");
+
+static const sl_cli_command_entry_t ota_hyphen_storage_hyphen_eeprom_group_table[] = {
+  { "wipe", &cli_cmd_ota_hyphen_storage_hyphen_eeprom_wipe, false },
+  { NULL, NULL, false },
+};
+static const sl_cli_command_info_t cli_cmd_grp_ota_hyphen_storage_hyphen_eeprom = \
+  SL_CLI_COMMAND_GROUP(ota_hyphen_storage_hyphen_eeprom_group_table, "ota-storage-eeprom related commands.");
+
 static const sl_cli_command_entry_t reporting_group_table[] = {
   { "print", &cli_cmd_reporting_print, false },
   { "clear", &cli_cmd_reporting_clear, false },
@@ -1659,6 +1974,7 @@ static const sl_cli_command_info_t cli_cmd_grp_zll_hyphen_commissioning = \
   SL_CLI_COMMAND_GROUP(zll_hyphen_commissioning_group_table, "zll-commissioning related commands");
 
 static const sl_cli_command_entry_t plugin_group_table[] = {
+  { "slot-manager", &cli_cmd_grp_slot_hyphen_manager, false },
   { "idle-sleep", &cli_cmd_grp_idle_hyphen_sleep, false },
   { "counters", &cli_cmd_grp_counters, false },
   { "find_and_bind", &cli_cmd_grp_find_and_bind, false },
@@ -1669,6 +1985,10 @@ static const sl_cli_command_entry_t plugin_group_table[] = {
   { "network-creator", &cli_cmd_grp_network_hyphen_creator, false },
   { "network-creator-security", &cli_cmd_grp_network_hyphen_creator_hyphen_security, false },
   { "network-steering", &cli_cmd_grp_network_hyphen_steering, false },
+  { "ota-client", &cli_cmd_grp_ota_hyphen_client, false },
+  { "ota-server", &cli_cmd_grp_ota_hyphen_server, false },
+  { "ota-storage-common", &cli_cmd_grp_ota_hyphen_storage_hyphen_common, false },
+  { "ota-storage-eeprom", &cli_cmd_grp_ota_hyphen_storage_hyphen_eeprom, false },
   { "reporting", &cli_cmd_grp_reporting, false },
   { "scenes", &cli_cmd_grp_scenes, false },
   { "stack-diagnostics", &cli_cmd_grp_stack_hyphen_diagnostics, false },
@@ -1852,6 +2172,7 @@ const sl_cli_command_entry_t sl_cli_default_command_table[] = {
   { "config-cca-mode", &cli_cmd__config_hyphen_cca_hyphen_mode, false },
   { "version", &cli_cmd__version, false },
   { "events", &cli_cmd__events, false },
+  { "eeprom", &cli_cmd_grp_eeprom, false },
   { "endpoints", &cli_cmd_grp_endpoints, false },
   { "security", &cli_cmd_grp_security, false },
   { "zigbee_print", &cli_cmd_grp_zigbee_print, false },

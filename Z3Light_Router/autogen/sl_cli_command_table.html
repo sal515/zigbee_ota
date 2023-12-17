@@ -567,6 +567,72 @@ Example syntax (.slcc or .slcp) for populating this file:
   </div>
 <div class="group">
   <div class="group-header">
+    <h2 class="group-name"> eeprom</h2>
+  </div>
+  <div class="group-info">
+    <span class="help">eeprom utility related commands</span>
+    
+    <div class="command-list">
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> eeprom data-print</span>
+        <span class="command-argument">u32</span>
+      <span class="command-handler">sli_eeprom_data_print_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help"></div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u32</span>offset
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> eeprom status</span>
+      <span class="command-handler">sli_eeprom_status_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help"></div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> eeprom info</span>
+      <span class="command-handler">sli_eeprom_info_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help"></div>
+      
+      
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+<div class="group">
+  <div class="group-header">
     <h2 class="group-name"> endpoints</h2>
   </div>
   <div class="group-info">
@@ -971,7 +1037,127 @@ Example syntax (.slcc or .slcp) for populating this file:
     
 <div class="group">
   <div class="group-header">
-    <h3 class="group-name"> plugin idle-sleep</h3>
+    <h3 class="group-name"> plugin slot-manager</h3>
+  </div>
+  <div class="group-info">
+    <span class="help">Slot Manager related commands</span>
+    
+    <div class="command-list">
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> plugin slot-manager boot-slot</span>
+        <span class="command-argument">u32</span>
+      <span class="command-handler">sli_slot_manager_cli_bootload_slot</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Boots the image in the specified slot ID.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u32</span>Storage slot number
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> plugin slot-manager erase-slot</span>
+        <span class="command-argument">u32</span>
+      <span class="command-handler">sli_slot_manager_cli_erase_slot</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Erases the specified slot ID.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u32</span>Storage slot number
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> plugin slot-manager ext-flash-info</span>
+      <span class="command-handler">sli_slot_manager_cli_print_external_flash_info</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Prints flash storage information.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> plugin slot-manager read</span>
+        <span class="command-argument">u32</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sli_slot_manager_cli_read_ext_flash</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Reads raw data from flash storage.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u32</span>Address to read
+        </li>
+        <li>
+        <span class="argument-name">u8</span>Number of bytes to read
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> plugin slot-manager slots-info</span>
+      <span class="command-handler">sli_slot_manager_cli_print_slots_info</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Prints information for all available slots.</div>
+      
+      
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+<div class="group">
+  <div class="group-header">
+    <h3 class="group-name"> idle-sleep</h3>
   </div>
   <div class="group-info">
     <span class="help">Commands to control idling/sleeping of the device</span>
@@ -983,7 +1169,7 @@ Example syntax (.slcc or .slcp) for populating this file:
   <div class="command">
     <div class="command-header-bar"></div>
     <div class="command-header">
-      <span class="command-name"> plugin idle-sleep status</span>
+      <span class="command-name"> idle-sleep status</span>
       <span class="command-handler">emberAfPluginIdleSleepStatusCommand</span>
     </div>
     <div class="command-info">
@@ -998,7 +1184,7 @@ Example syntax (.slcc or .slcp) for populating this file:
   <div class="command">
     <div class="command-header-bar"></div>
     <div class="command-header">
-      <span class="command-name"> plugin idle-sleep force-awake</span>
+      <span class="command-name"> idle-sleep force-awake</span>
         <span class="command-argument">u8</span>
       <span class="command-handler">emberAfPluginIdleSleepStayAwakeCommand</span>
     </div>
@@ -1023,7 +1209,7 @@ Example syntax (.slcc or .slcp) for populating this file:
   <div class="command">
     <div class="command-header-bar"></div>
     <div class="command-header">
-      <span class="command-name"> plugin idle-sleep awake-when-not-joined</span>
+      <span class="command-name"> idle-sleep awake-when-not-joined</span>
         <span class="command-argument">u8</span>
       <span class="command-handler">emberAfPluginIdleSleepAwakeWhenNotJoinedCommand</span>
     </div>
@@ -2186,6 +2372,625 @@ Example syntax (.slcc or .slcp) for populating this file:
         </li>
       </ul>
       </div>
+      
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+<div class="group">
+  <div class="group-header">
+    <h3 class="group-name"> ota-client</h3>
+  </div>
+  <div class="group-info">
+    <span class="help">ota-client related commands.</span>
+    
+    <div class="command-list">
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-client bootload</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">otaCliBootload</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Bootloads the image at the specified index by calling the OTA bootload callback.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>The index at which to begin bootloading the image
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-client verify</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">otaCliVerify</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Performs signature verification on the image at the specified index.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>The index at which to begin verification of the image
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-client info</span>
+      <span class="command-handler">otaPrintClientInfo</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Prints the manufacturer ID, Image Type ID, and Version information that are used when a query next image is sent to the server by the client.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-client start</span>
+      <span class="command-handler">otaStartClientCommand</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Starts the OTA client state machine. The state machine discovers the OTA server, queries for new images, downloads the images and waits for the server command to upgrade.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-client stop</span>
+      <span class="command-handler">otaStopClientCommand</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Stops the OTA state machine.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-client status</span>
+      <span class="command-handler">sli_zigbee_af_ota_client_print_state</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Prints information on the current state of the OTA client download.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-client block-test</span>
+      <span class="command-handler">sli_zigbee_af_send_image_block_request_test</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sends an image block request for a file the server should not have.  Test harness only (test case 9.5.6 - Missing File)</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-client page-request</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">setPageRequest</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Can be used to dynamically turn off sending page requests on the client side, if the server doesn't support this feature.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>Boolean value turning on (1) or off (0) the page request flag
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-client upgrade-request</span>
+      <span class="command-handler">otaSendUpgradeRequest</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sends an UpgradeEndRequest to an OTA server.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-client disable-downgrades</span>
+      <span class="command-handler">sli_zigbee_af_ota_client_disable_downgrades</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Disables OTA downgrades.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-client enable-downgrades</span>
+      <span class="command-handler">sli_zigbee_af_ota_client_enable_downgrades</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Enables OTA downgrades.</div>
+      
+      
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+<div class="group">
+  <div class="group-header">
+    <h3 class="group-name"> ota-server</h3>
+  </div>
+  <div class="group-info">
+    <span class="help">ota-server related commands.</span>
+    
+    <div class="command-list">
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-server notify</span>
+        <span class="command-argument">u16</span>
+        <span class="command-argument">u8</span>
+        <span class="command-argument">u8</span>
+        <span class="command-argument">u8</span>
+        <span class="command-argument">u16</span>
+        <span class="command-argument">u16</span>
+        <span class="command-argument">u32</span>
+      <span class="command-handler">otaImageNotifyCommand</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sends an OTA Image Notify message to the specified destination indicating a new version of an image is available for download.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u16</span>The node ID (can be a broadcast address) to which this OTA Notify message should be sent
+        </li>
+        <li>
+        <span class="argument-name">u8</span>Target endpoint for the OTA Notify message (only meaningful for non-broadcast target destination)
+        </li>
+        <li>
+        <span class="argument-name">u8</span>Specifies which parameters to include in the OTA Notify cluster command payload (0 = jitter value only; 1 = jitter and manufacturer id; 2 = jitter, mfr id, and device id; 3 = jitter, mfr id, device id, and firmware version)
+        </li>
+        <li>
+        <span class="argument-name">u8</span>Corresponds to QueryJitter parameter in the OTA Upgrade cluster specification. Indicates whether the client receiving Image Notify Command should send in Query Next Image Request command or not.
+        </li>
+        <li>
+        <span class="argument-name">u16</span>Manufacturer ID for the image being advertised (should match the mfr ID in the OTA files header)
+        </li>
+        <li>
+        <span class="argument-name">u16</span>Image type ID for the image being advertised (should match the image type ID from the OTA files header)
+        </li>
+        <li>
+        <span class="argument-name">u32</span>Firmware version of the image being advertised (should match the version from the OTA files header)
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-server upgrade</span>
+        <span class="command-argument">u16</span>
+        <span class="command-argument">u8</span>
+        <span class="command-argument">u16</span>
+        <span class="command-argument">u16</span>
+        <span class="command-argument">u32</span>
+      <span class="command-handler">otaSendUpgradeCommand</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Instructs a device to upgrade now.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u16</span>Short destination to send message
+        </li>
+        <li>
+        <span class="argument-name">u8</span>Endpoint destination to send message
+        </li>
+        <li>
+        <span class="argument-name">u16</span>Manufacturer ID for the image (0xFFFF for wildcard)
+        </li>
+        <li>
+        <span class="argument-name">u16</span>Image type for the image (0xFFFF for wildcard)
+        </li>
+        <li>
+        <span class="argument-name">u32</span>File version for the image (0xFFFFFFFF for wildcard)
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+<div class="group">
+  <div class="group-header">
+    <h4 class="group-name"> ota-server policy</h4>
+  </div>
+  <div class="group-info">
+    <span class="help">policy related commands</span>
+    
+    <div class="command-list">
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-server policy print</span>
+      <span class="command-handler">sli_zigbee_af_ota_server_policy_print</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Prints the polices used by the OTA Server Policy component.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-server policy query</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">setPolicy</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets the policy used by the OTA Server Policy component when it receives a query request from the client.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>0 Upgrade if server has newer (default), 1 Downgrade if server has older, 2       Reinstall if server has same, 3 No next version (no next image is available for download)
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-server policy upgrade</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">setPolicy</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets the policy used by the OTA Server Policy component when it receives an upgrade end request.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>0 Upgrade Now (default), 1 Upgrade in 2       minutes, 2 Ask me later to upgrade, 3 Abort Upgrade (send default response)
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-server policy page-req-miss</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">setPolicy</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets the modulus number of blocks not to respond to. This is used in testing to simulate a device that fails to receive certain blocks from an Image Page Request message.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>The block modulus number to skip sending when responding to an Image Page Request. E.g. if 2, every other block will not be sent. 0 turns the feature off.
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-server policy page-req-sup</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">setPolicy</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets whether the Page Request feature is supported or not.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>1 if Page Request is supported, 0 if unsupported
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-server policy block-request</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">setPolicy</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets the policy used by the ota-server Policy component when it receives an image block request.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>0 Send block (default), 1 Delay download once for 2 minutes, 2 Always abort download after first block
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-server policy image-req-min-period</span>
+        <span class="command-argument">u16</span>
+      <span class="command-handler">setPolicy</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Sets the Minimum Block Period.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u16</span>The minimum block period in milliseconds
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    </div>
+  </div>
+</div></div>
+  </div>
+</div>
+<div class="group">
+  <div class="group-header">
+    <h3 class="group-name"> ota-storage-common</h3>
+  </div>
+  <div class="group-info">
+    <span class="help">ota-storage-common related commands</span>
+    
+    <div class="command-list">
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-storage-common printImages</span>
+      <span class="command-handler">sli_zigbee_af_ota_print_all_images</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Prints the images.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-storage-common delete</span>
+        <span class="command-argument">u8</span>
+      <span class="command-handler">sli_zigbee_af_ota_image_delete</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Deletes the image at the specified index.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>The index at which to begin deleting the image
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-storage-common reload</span>
+      <span class="command-handler">sli_zigbee_af_ota_reload_storage_device</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Reload the storage device.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-storage-common storage-info</span>
+      <span class="command-handler">sli_zigbee_af_ota_storage_info_print</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Prints information about the storage device.</div>
+      
+      
+    </div>
+  </div>
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-storage-common data-print</span>
+        <span class="command-argument">u8</span>
+        <span class="command-argument">u32</span>
+      <span class="command-handler">sli_zigbee_af_ota_storage_data_print</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Prints arbitrary bytes of the OTA image on disk.</div>
+      
+      
+      <div class="argument-list">
+      <div class="arguments-title">Arguments</div>
+      <ul>
+        <li>
+        <span class="argument-name">u8</span>The index of the image to print its data
+        </li>
+        <li>
+        <span class="argument-name">u32</span>The offset into the OTA image that will be printed
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+    </div>
+  </div>
+</div>
+<div class="group">
+  <div class="group-header">
+    <h3 class="group-name"> ota-storage-eeprom</h3>
+  </div>
+  <div class="group-info">
+    <span class="help">ota-storage-eeprom related commands.</span>
+    
+    <div class="command-list">
+    
+    
+  
+  <div class="command">
+    <div class="command-header-bar"></div>
+    <div class="command-header">
+      <span class="command-name"> ota-storage-eeprom wipe</span>
+      <span class="command-handler">sli_zigbee_af_ota_wipe_storage_device_command</span>
+    </div>
+    <div class="command-info">
+      <div class="help">Wipes all data in the storage device.</div>
+      
       
     </div>
   </div>

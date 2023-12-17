@@ -293,6 +293,7 @@ sli_zigbee_af_stack_status_callback(status);
 sli_zigbee_af_green_power_client_stack_status_callback(status);
 sli_zigbee_af_network_creator_security_stack_status_callback(status);
 sli_zigbee_af_network_steering_stack_status_callback(status);
+emberAfPluginOtaClientStackStatusCallback(status);
 sli_zigbee_af_reporting_stack_status_callback(status);
 sli_zigbee_af_zll_commissioning_common_stack_status_callback(status);
 }
@@ -801,6 +802,7 @@ void sli_zigbee_af_dsa_verify(
 {
 (void)status;
 
+sli_zigbee_af_dsa_verify_callback(status);
 }
 
 

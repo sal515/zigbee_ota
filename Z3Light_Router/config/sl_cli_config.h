@@ -68,7 +68,7 @@
 // <s SL_CLI_PROMPT_STRING> New command prompt
 // <i> Default: "> "
 // <i> Define the command prompt indicating that a new command may be written.
-#define SL_CLI_PROMPT_STRING               "Z3Light>"
+#define SL_CLI_PROMPT_STRING               "Z3LightRouter>"
 
 // <q SL_CLI_HELP_DESCRIPTION_ENABLED> Enable help descriptions
 // <i> Default: 1

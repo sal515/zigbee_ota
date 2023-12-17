@@ -36,6 +36,11 @@ ENTRY(Reset_Handler)
 
 SECTIONS
 {
+  .aat :
+  {
+    KEEP(*(.aat*));
+    . = ALIGN(512);
+  } > FLASH
 
   .text :
   {
@@ -127,11 +132,13 @@ SECTIONS
     PROVIDE(__stack = __StackTop);
   } > RAM
 
-
   .noinit . (NOLOAD):
   {
+    PROVIDE(__NO_INIT__begin = .);
     *(.noinit*);
+    PROVIDE(__NO_INIT__end = .);
   } > RAM
+  PROVIDE(__NO_INIT_NEW__size = SIZEOF(.noinit));
 
   .data . : AT (__etext)
   {
@@ -188,35 +195,32 @@ SECTIONS
     end = __end__;
     _end = __end__;
     KEEP(*(.heap*))
-    __HeapLimit = ORIGIN(RAM) + LENGTH(RAM);
+    . = ORIGIN(RAM) + LENGTH(RAM);
+    __HeapLimit = .;
   } > RAM
 
   __heap_size = __HeapLimit - __HeapBase;
-  __ram_end__ = 0x20000000 + 0x40000;
-  __main_flash_end__ = 0x8006000 + 0x178000;
 
-   /* This is where we handle flash storage blocks. We use dummy sections for finding the configured
+  /* This is where we handle flash storage blocks. We use dummy sections for finding the configured
    * block sizes and then "place" them at the end of flash when the size is known. */
   .internal_storage (DSECT) : {
     KEEP(*(.internal_storage*))
   } > FLASH
-  
 
   .nvm (DSECT) : {
     KEEP(*(.simee*))
   } > FLASH
 
-  linker_nvm_end = __main_flash_end__;
-  linker_nvm_begin = linker_nvm_end - SIZEOF(.nvm);
-  linker_nvm_size = SIZEOF(.nvm);
-  linker_storage_end = linker_nvm_begin;
-  __nvm3Base = linker_nvm_begin;
-
+  linker_storage_end = ORIGIN(FLASH) + LENGTH(FLASH);
   linker_storage_begin = linker_storage_end - SIZEOF(.internal_storage);
   linker_storage_size = SIZEOF(.internal_storage);
-  ASSERT((linker_storage_begin >= (__etext + SIZEOF(.data))), "FLASH memory overflowed !")
+  linker_nvm_end = linker_storage_begin;
+  linker_nvm_begin = linker_nvm_end - SIZEOF(.nvm);
+  linker_nvm_size = SIZEOF(.nvm);
+  __nvm3Base = linker_nvm_begin;
+  ASSERT((linker_nvm_begin >= (__etext + SIZEOF(.data))), "FLASH memory overflowed !")
 
 
   app_flash_end = 0x8006000 + 0x178000;
-  ASSERT( (linker_nvm_begin + SIZEOF(.nvm)) <= app_flash_end, "NVM3 is excessing the flash size !")
+  ASSERT( (linker_storage_end + SIZEOF(.internal_storage)) <= app_flash_end, "Internal storage is excessing the flash size !")
 }

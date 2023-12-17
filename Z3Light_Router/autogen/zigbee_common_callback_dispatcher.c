@@ -28,6 +28,7 @@ void sli_zigbee_af_event_init(void)
   emberAfPluginGreenPowerClientInitCallback(SL_ZIGBEE_INIT_LEVEL_EVENT);
   emberAfPluginInterpanInitCallback(SL_ZIGBEE_INIT_LEVEL_EVENT);
   sli_zigbee_af_network_steering_init_callback(SL_ZIGBEE_INIT_LEVEL_EVENT);
+  sli_zigbee_af_ota_storage_simple_eeprom_init_callback(SL_ZIGBEE_INIT_LEVEL_EVENT);
   emberAfPluginReportingInitCallback(SL_ZIGBEE_INIT_LEVEL_EVENT);
   sli_zigbee_af_scan_dispatch_init_callback(SL_ZIGBEE_INIT_LEVEL_EVENT);
   sli_zigbee_af_update_tc_link_key_begin_tc_link_key_update_init(SL_ZIGBEE_INIT_LEVEL_EVENT);
@@ -46,8 +47,10 @@ void sli_zigbee_af_initDone(void)
   sli_zigbee_af_initCallback(SL_ZIGBEE_INIT_LEVEL_DONE);
   sli_zigbee_zcl_cli_init(SL_ZIGBEE_INIT_LEVEL_DONE);
   emberAfInit(SL_ZIGBEE_INIT_LEVEL_DONE);
+  emberAfPluginSlotManagerInitCallback(SL_ZIGBEE_INIT_LEVEL_DONE);
   emberAfPluginGreenPowerClientInitCallback(SL_ZIGBEE_INIT_LEVEL_DONE);
   emberAfPluginNetworkCreatorSecurityInitCallback(SL_ZIGBEE_INIT_LEVEL_DONE);
+  sli_zigbee_af_ota_storage_simple_init_callback(SL_ZIGBEE_INIT_LEVEL_DONE);
   emberAfPluginReportingInitCallback(SL_ZIGBEE_INIT_LEVEL_DONE);
   emberAfPluginZllCommissioningCommonInitCallback(SL_ZIGBEE_INIT_LEVEL_DONE);
   sli_zigbee_af_network_init(SL_ZIGBEE_INIT_LEVEL_DONE);
@@ -56,4 +59,5 @@ void sli_zigbee_af_initDone(void)
 
 void sli_zigbee_af_tick(void)
 {
+  emberAfOtaServerTick();
 }

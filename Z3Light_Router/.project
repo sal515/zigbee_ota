@@ -449,6 +449,26 @@
 			<locationURI>STUDIO_SDK_LOC/util/plugin/security_manager/security_manager.h</locationURI>
 		</link>
 		<link>
+			<name>gecko_sdk_4.3.2/util/plugin/slot-manager/slot-manager-cli.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/util/plugin/slot-manager/slot-manager-cli.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/util/plugin/slot-manager/slot-manager-cli.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/util/plugin/slot-manager/slot-manager-cli.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/util/plugin/slot-manager/slot-manager.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/util/plugin/slot-manager/slot-manager.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/util/plugin/slot-manager/slot-manager.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/util/plugin/slot-manager/slot-manager.h</locationURI>
+		</link>
+		<link>
 			<name>gecko_sdk_4.3.2/util/third_party/printf/printf.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/util/third_party/printf/printf.c</locationURI>
@@ -884,9 +904,24 @@
 			<locationURI>STUDIO_SDK_LOC/platform/service/legacy_hal/inc/asm.h</locationURI>
 		</link>
 		<link>
+			<name>gecko_sdk_4.3.2/platform/service/legacy_hal/inc/bootloader-common.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/legacy_hal/inc/bootloader-common.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/platform/service/legacy_hal/inc/bootloader-eeprom.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/legacy_hal/inc/bootloader-eeprom.h</locationURI>
+		</link>
+		<link>
 			<name>gecko_sdk_4.3.2/platform/service/legacy_hal/inc/bootloader-interface-app.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/service/legacy_hal/inc/bootloader-interface-app.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/platform/service/legacy_hal/inc/bootloader-interface-standalone.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/legacy_hal/inc/bootloader-interface-standalone.h</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.3.2/platform/service/legacy_hal/inc/bootloader-interface.h</name>
@@ -992,6 +1027,26 @@
 			<name>gecko_sdk_4.3.2/platform/service/legacy_hal/src/base-replacement.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/service/legacy_hal/src/base-replacement.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/platform/service/legacy_hal/src/bootloader-common.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/legacy_hal/src/bootloader-common.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/platform/service/legacy_hal/src/bootloader-interface-app.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/legacy_hal/src/bootloader-interface-app.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/platform/service/legacy_hal/src/bootloader-interface-standalone.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/legacy_hal/src/bootloader-interface-standalone.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/platform/service/legacy_hal/src/bootloader-interface.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/legacy_hal/src/bootloader-interface.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.3.2/platform/service/legacy_hal/src/crc.c</name>
@@ -1632,6 +1687,31 @@
 			<name>gecko_sdk_4.3.2/protocol/zigbee/stack/zll/zll-token-config.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/stack/zll/zll-token-config.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/util/plugin/plugin-afv6/eeprom/eeprom-print.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/util/plugin/plugin-afv6/eeprom/eeprom-print.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/util/plugin/plugin-common/eeprom/eeprom-cb.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/util/plugin/plugin-common/eeprom/eeprom-cb.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/util/plugin/plugin-common/eeprom/eeprom-cli.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/util/plugin/plugin-common/eeprom/eeprom-cli.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/util/plugin/plugin-common/eeprom/eeprom.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/util/plugin/plugin-common/eeprom/eeprom.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/util/plugin/plugin-common/eeprom/eeprom.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/util/plugin/plugin-common/eeprom/eeprom.h</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.3.2/util/silicon_labs/silabs_core/buffer_manager/buffer-management.h</name>
@@ -3862,6 +3942,176 @@
 			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/on-off/on-off.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/on-off/on-off.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-client/ota-client-cb.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-client/ota-client-cb.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-client/ota-client-cli.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-client/ota-client-cli.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-client/ota-client-page-request.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-client/ota-client-page-request.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-client/ota-client-page-request.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-client/ota-client-page-request.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-client/ota-client-signature-verify.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-client/ota-client-signature-verify.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-client/ota-client-signature-verify.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-client/ota-client-signature-verify.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-client/ota-client.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-client/ota-client.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-client/ota-client.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-client/ota-client.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-client-policy/ota-client-policy.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-client-policy/ota-client-policy.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-client-policy/ota-client-policy.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-client-policy/ota-client-policy.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-common/ota-cli.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-common/ota-cli.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-common/ota-common.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-common/ota-common.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-common/ota.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-common/ota.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-server/ota-server-cb.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-server/ota-server-cb.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-server/ota-server-cli.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-server/ota-server-cli.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-server/ota-server-dynamic-block-period.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-server/ota-server-dynamic-block-period.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-server/ota-server-dynamic-block-period.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-server/ota-server-dynamic-block-period.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-server/ota-server-page-request.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-server/ota-server-page-request.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-server/ota-server.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-server/ota-server.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-server/ota-server.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-server/ota-server.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-server-policy/ota-server-policy-cb.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-server-policy/ota-server-policy-cb.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-server-policy/ota-server-policy.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-server-policy/ota-server-policy.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-server-policy/ota-server-policy.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-server-policy/ota-server-policy.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-storage-common/ota-storage-common-cli.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-storage-common/ota-storage-common-cli.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-storage-common/ota-storage-common.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-storage-common/ota-storage-common.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-storage-common/ota-storage-simple-custom.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-storage-common/ota-storage-simple-custom.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-storage-common/ota-storage.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-storage-common/ota-storage.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-storage-simple/ota-storage-simple-driver.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-storage-simple/ota-storage-simple-driver.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-storage-simple/ota-storage-simple.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-storage-simple/ota-storage-simple.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-storage-simple-eeprom/ota-storage-eeprom-page-erase.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-storage-simple-eeprom/ota-storage-eeprom-page-erase.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-storage-simple-eeprom/ota-storage-eeprom-read-modify-write.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-storage-simple-eeprom/ota-storage-eeprom-read-modify-write.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-storage-simple-eeprom/ota-storage-eeprom.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-storage-simple-eeprom/ota-storage-eeprom.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-storage-simple-eeprom/ota-storage-eeprom.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-storage-simple-eeprom/ota-storage-eeprom.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/ota-storage-simple-eeprom/ota-storage-simple-eeprom-cb.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/protocol/zigbee/app/framework/plugin/ota-storage-simple-eeprom/ota-storage-simple-eeprom-cb.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.3.2/protocol/zigbee/app/framework/plugin/reporting/reporting-cb.c</name>

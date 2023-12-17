@@ -23,6 +23,7 @@
 #include "nvm3_default.h"
 #include "sl_simple_button_instances.h"
 #include "sl_simple_led_instances.h"
+#include "eeprom.h"
 #include "sl_cli_instances.h"
 #include "psa/crypto.h"
 #include "sl_iostream_init_instances.h"
@@ -54,6 +55,7 @@ void sl_driver_init(void)
   GPIOINT_Init();
   sl_simple_button_init_instances();
   sl_simple_led_init_instances();
+  emberAfPluginEepromInit();
   sl_cos_send_config();
 }
 

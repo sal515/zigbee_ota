@@ -27,6 +27,9 @@ void emberAfIdentifyClusterServerInitCallback (uint8_t endpoint);
 void emberAfIdentifyClusterServerAttributeChangedCallback (uint8_t endpoint, EmberAfAttributeId attributeId);
 void emberAfLevelControlClusterServerInitCallback (uint8_t endpoint);
 void emberAfOnOffClusterServerInitCallback (uint8_t endpoint);
+void emberAfOtaBootloadClusterClientInitCallback (uint8_t endpoint);
+void emberAfOtaBootloadClusterClientDefaultResponseCallback (uint8_t endpoint, uint8_t commandId, EmberAfStatus status);
+void emberAfOtaBootloadClusterServerInitCallback (uint8_t endpoint);
 void emberAfScenesClusterServerInitCallback (uint8_t endpoint);
 
 // Array of cluster function (aka cluster action callbacks) structures.
@@ -63,6 +66,21 @@ void emberAfScenesClusterServerInitCallback (uint8_t endpoint);
     (EmberAfGenericClusterFunction)emberAfOnOffClusterServerInitCallback\
   },\
   {\
+    25u,\
+    (CLUSTER_MASK_CLIENT | CLUSTER_MASK_INIT_FUNCTION),\
+    (EmberAfGenericClusterFunction)emberAfOtaBootloadClusterClientInitCallback\
+  },\
+  {\
+    25u,\
+    (CLUSTER_MASK_CLIENT | CLUSTER_MASK_DEFAULT_RESPONSE_FUNCTION),\
+    (EmberAfGenericClusterFunction)emberAfOtaBootloadClusterClientDefaultResponseCallback\
+  },\
+  {\
+    25u,\
+    (CLUSTER_MASK_SERVER | CLUSTER_MASK_INIT_FUNCTION),\
+    (EmberAfGenericClusterFunction)emberAfOtaBootloadClusterServerInitCallback\
+  },\
+  {\
     5u,\
     (CLUSTER_MASK_SERVER | CLUSTER_MASK_INIT_FUNCTION),\
     (EmberAfGenericClusterFunction)emberAfScenesClusterServerInitCallback\
@@ -88,6 +106,9 @@ int clust_3_server_init_function;
 int clust_3_server_attribute_changed_function; 
 int clust_8_server_init_function; 
 int clust_6_server_init_function; 
+int clust_25_client_init_function; 
+int clust_25_client_default_response_function;
+int clust_25_server_init_function; 
 int clust_5_server_init_function; 
 };
 

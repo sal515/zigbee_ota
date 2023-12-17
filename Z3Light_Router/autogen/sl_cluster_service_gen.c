@@ -37,6 +37,10 @@ extern uint32_t emberAfLevelControlClusterServerCommandParse(sl_service_opcode_t
                                                 sl_service_function_context_t *context);
 extern uint32_t emberAfOnOffClusterServerCommandParse(sl_service_opcode_t opcode,
                                                 sl_service_function_context_t *context);
+extern uint32_t emberAfOtaClusterClientCommandParse(sl_service_opcode_t opcode,
+                                                sl_service_function_context_t *context);
+extern uint32_t emberAfOtaClusterServerCommandParse(sl_service_opcode_t opcode,
+                                                sl_service_function_context_t *context);
 extern uint32_t emberAfScenesClusterServerCommandParse(sl_service_opcode_t opcode,
                                                 sl_service_function_context_t *context);
 extern uint32_t emberAfZllIdentifyClusterServerCommandParse(sl_service_opcode_t opcode,
@@ -57,6 +61,8 @@ const sl_service_function_entry_t sli_cluster_service_entries[] = {
   { SL_SERVICE_FUNCTION_TYPE_ZCL_COMMAND, 0x0003, (NOT_MFG_SPECIFIC | (SL_CLUSTER_SERVICE_SIDE_SERVER << 16)), emberAfIdentifyClusterServerCommandParse },
   { SL_SERVICE_FUNCTION_TYPE_ZCL_COMMAND, 0x0008, (NOT_MFG_SPECIFIC | (SL_CLUSTER_SERVICE_SIDE_SERVER << 16)), emberAfLevelControlClusterServerCommandParse },
   { SL_SERVICE_FUNCTION_TYPE_ZCL_COMMAND, 0x0006, (NOT_MFG_SPECIFIC | (SL_CLUSTER_SERVICE_SIDE_SERVER << 16)), emberAfOnOffClusterServerCommandParse },
+  { SL_SERVICE_FUNCTION_TYPE_ZCL_COMMAND, 0x0019, (NOT_MFG_SPECIFIC | (SL_CLUSTER_SERVICE_SIDE_CLIENT << 16)), emberAfOtaClusterClientCommandParse },
+  { SL_SERVICE_FUNCTION_TYPE_ZCL_COMMAND, 0x0019, (NOT_MFG_SPECIFIC | (SL_CLUSTER_SERVICE_SIDE_SERVER << 16)), emberAfOtaClusterServerCommandParse },
   { SL_SERVICE_FUNCTION_TYPE_ZCL_COMMAND, 0x0005, (NOT_MFG_SPECIFIC | (SL_CLUSTER_SERVICE_SIDE_SERVER << 16)), emberAfScenesClusterServerCommandParse },
   { SL_SERVICE_FUNCTION_TYPE_ZCL_COMMAND, 0x0003, (NOT_MFG_SPECIFIC | (SL_CLUSTER_SERVICE_SIDE_SERVER << 16)), emberAfZllIdentifyClusterServerCommandParse },
   { SL_SERVICE_FUNCTION_TYPE_ZCL_COMMAND, 0x0006, (NOT_MFG_SPECIFIC | (SL_CLUSTER_SERVICE_SIDE_SERVER << 16)), emberAfZllOnOffClusterServerCommandParse },
