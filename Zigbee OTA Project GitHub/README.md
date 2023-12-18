@@ -4,6 +4,8 @@
 
 This project uses Silicon Lab boards to demonstrate the Over-The-Air (OTA) update functionality in a Zigbee network. The network used to demonstrate the OTA functionality includes a Gateway (Z3Gateway), a Router (Z3Light_Router), and an End Device (Z3Switch_SED). The Gateway performs the OTA Server role to store and serve the upgrade images to the OTA Clients, the Routers, and the End devices in the network. The OTA Clients periodically query for new applicable upgrade images from the OTA Server.
 
+  ![Zigbee OTA Summary](./img/Zigbee_OTA_Summar.png)
+
 ### References ###
 
 - OTA Bootloader Server and Client Setup in Zigbee [(AN1384 Rev 0.2)](https://www.silabs.com/documents/public/application-notes/an1384-ota-bootloader-server-client-setup-zigbee-7.pdf)
@@ -66,13 +68,13 @@ This project uses Silicon Lab boards to demonstrate the Over-The-Air (OTA) updat
   
   - Please note that instead of following Step 5 mentioned in Section 4.1 of AN1384, this demonstration uses the "Slot Manager Component" along with the "Use First Slot" option in the "OTA Simple Storage EEPROM Driver". To perform this, you need an appropriate internal storage bootloader flashed to the target part such as "Internal Storage Bootloader (Single Image on 1536 KB Device)."
 
-    ![Use First Slot - OTA Simple Storage EEPROM Driver](/img/Zigbee_OTA_Simple_Storage_EEPROM_Driver_Use_First_Slot.jpg)
+    ![Use First Slot - OTA Simple Storage EEPROM Driver](./img/Zigbee_OTA_Simple_Storage_EEPROM_Driver_Use_First_Slot.jpg)
 
-    ![Slot Manager Component](/img/Zigbee_Slot_Manager_Component.jpg)
+    ![Slot Manager Component](./img/Zigbee_Slot_Manager_Component.jpg)
 
 - The **Image Type ID** was set to **11** for Router OTA images.
 
-  ![Image Type ID](/img/image_type_id_OTA%20Bootload%20Cluster%20Client%20Policy.jpg)
+  ![Image Type ID](./img/image_type_id_OTA%20Bootload%20Cluster%20Client%20Policy.jpg)
 
 - Create a new firmware image for the Router with a later **Firmware Version** that would be distributed to Routers that have OTA functionality enabled:
 
@@ -155,3 +157,5 @@ Once the project is imported to Simplicity Studio and the **<project_name>.slcp*
 ## Special Notes ##
 
 - Please follow the Sleepy End Device project available on our GitHub ([zigbee_sed_z3switch](https://github.com/SiliconLabs/zigbee_applications/tree/master/zigbee_sed_z3switch)) to create a proper Zigbee Sleepy End Device
+
+- The download speed of Over-The-Air (OTA) updates for Sleepy End Devices (SEDs) can significantly fluctuate based on the set polling rate. To enhance the speed of the OTA download process, it's advisable to temporarily reduce the polling interval.
