@@ -26,7 +26,7 @@
 // <o EMBER_AF_PLUGIN_OTA_CLIENT_QUERY_DELAY_MINUTES> Query OTA Server Delay (minutes) <1-65535>
 // <i> Default: 5
 // <i> How often the client queries the OTA server for a new upgrade image.
-#define EMBER_AF_PLUGIN_OTA_CLIENT_QUERY_DELAY_MINUTES   5
+#define EMBER_AF_PLUGIN_OTA_CLIENT_QUERY_DELAY_MINUTES   2
 
 // <o EMBER_AF_PLUGIN_OTA_CLIENT_QUERY_ERROR_THRESHOLD> Query Error Rediscovery Threshold <1-255>
 // <i> Default: 10

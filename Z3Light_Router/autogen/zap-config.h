@@ -76,7 +76,7 @@
 		  { 0x0000, ZCL_INT8U_ATTRIBUTE_TYPE, 1, (ATTRIBUTE_MASK_TOKENIZE), { (uint8_t*)0x00  } }, /* 30 Cluster: Level Control, Attribute: current level, Side: server*/ \
 		  { 0x0001, ZCL_INT16U_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0000  } }, /* 31 Cluster: Level Control, Attribute: remaining time, Side: server*/ \
 		  { 0x000F, ZCL_BITMAP8_ATTRIBUTE_TYPE, 1, (ATTRIBUTE_MASK_WRITABLE), { (uint8_t*)0x00  } }, /* 32 Cluster: Level Control, Attribute: options, Side: server*/ \
-		  { 0x4000, ZCL_INT8U_ATTRIBUTE_TYPE, 1, (ATTRIBUTE_MASK_WRITABLE| ATTRIBUTE_MASK_TOKENIZE), { (uint8_t*)0x00  } }, /* 33 Cluster: Level Control, Attribute: start up current level, Side: server*/ \
+		  { 0x4000, ZCL_INT8U_ATTRIBUTE_TYPE, 1, (ATTRIBUTE_MASK_WRITABLE| ATTRIBUTE_MASK_TOKENIZE), { (uint8_t*)0x33  } }, /* 33 Cluster: Level Control, Attribute: start up current level, Side: server*/ \
 		  { 0xFFFD, ZCL_INT16U_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0001  } }, /* 34 Cluster: Level Control, Attribute: cluster revision, Side: server*/ \
 		  { 0x0000, ZCL_IEEE_ADDRESS_ATTRIBUTE_TYPE, 8, (ATTRIBUTE_MASK_CLIENT), { (uint8_t*)&(generatedDefaults[22]) } }, /* 35 Cluster: Over the Air Bootloading, Attribute: OTA Upgrade Server ID, Side: client*/ \
 	  { 0x0001, ZCL_INT32U_ATTRIBUTE_TYPE, 4, (ATTRIBUTE_MASK_CLIENT), { (uint8_t*)&(generatedDefaults[30]) } }, /* 36 Cluster: Over the Air Bootloading, Attribute: Offset (address) into the file, Side: client*/ \
