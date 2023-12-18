@@ -51,12 +51,12 @@ typedef uint8_t tokType_on_off;
 DEFINE_BASIC_TOKEN(ON_OFF_1, tokType_on_off, 0x00)
 DEFINE_BASIC_TOKEN(START_UP_ON_OFF_1, tokType_start_up_on_off, 0xFF)
 DEFINE_BASIC_TOKEN(CURRENT_LEVEL_1, tokType_current_level, 0x00)
-DEFINE_BASIC_TOKEN(START_UP_CURRENT_LEVEL_1, tokType_start_up_current_level, 0x33)
-DEFINE_BASIC_TOKEN(ON_OFF_2, tokType_on_off, 0x00)
+DEFINE_BASIC_TOKEN(START_UP_CURRENT_LEVEL_1, tokType_start_up_current_level, 0)
+                        DEFINE_BASIC_TOKEN(ON_OFF_2, tokType_on_off, 0x00)
 DEFINE_BASIC_TOKEN(START_UP_ON_OFF_2, tokType_start_up_on_off, 0xFF)
 DEFINE_BASIC_TOKEN(CURRENT_LEVEL_2, tokType_current_level, 0x00)
-DEFINE_BASIC_TOKEN(START_UP_CURRENT_LEVEL_2, tokType_start_up_current_level, 0x33)
-DEFINE_BASIC_TOKEN(COLOR_CONTROL_COLOR_TEMPERATURE_2, tokType_color_control_color_temperature, 0x00FA)
+DEFINE_BASIC_TOKEN(START_UP_CURRENT_LEVEL_2, tokType_start_up_current_level, 0)
+                        DEFINE_BASIC_TOKEN(COLOR_CONTROL_COLOR_TEMPERATURE_2, tokType_color_control_color_temperature, 0x00FA)
 DEFINE_BASIC_TOKEN(START_UP_COLOR_TEMPERATURE_MIREDS_2, tokType_start_up_color_temperature_mireds, 0x4444)
 #endif // DEFINETOKENS
 
