@@ -21,17 +21,17 @@
 // <o EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_IMAGE_TYPE_ID> Image Type ID <0-65535>
 // <i> Default: 0
 // <i> This is the device's OTA image identifier used for querying the OTA server about the next image to use for an upgrade.
-#define EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_IMAGE_TYPE_ID   0
+#define EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_IMAGE_TYPE_ID   11
 
 // <o EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_FIRMWARE_VERSION> Firmware Version <1-4294967295>
 // <i> Default: 1
 // <i> This is the device's current firmware version, used when querying the OTA server about the next image to use for an upgrade.
-#define EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_FIRMWARE_VERSION   1
+#define EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_FIRMWARE_VERSION   5
 
 // <o EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_HARDWARE_VERSION> Hardware Version <0-65535>
 // <i> Default: 0
 // <i> Devices may have a hardware version that limits what images they can use.  OTA Images may be configured with minimum and maximum hardware versions that they are supported on.  If the device is not restricted by hardware version then this value should be 0xFFFF.
-#define EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_HARDWARE_VERSION   1
+#define EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_HARDWARE_VERSION   0
 
 // <q EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_EBL_VERIFICATION> Perform EBL Verification (SOC Only)
 // <i> Default: TRUE
@@ -41,7 +41,7 @@
 // <q EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_INCLUDE_HARDWARE_VERSION> Include Hardware Version
 // <i> Default: FALSE
 // <i> This indicates that the current hardware version of the product should be included in the messages sent to the ZigBee OTA Cluster server.
-#define EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_INCLUDE_HARDWARE_VERSION   1
+#define EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_INCLUDE_HARDWARE_VERSION   0
 
 // <q EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_DELETE_FAILED_DOWNLOADS> Delete Failed Downloads
 // <i> Default: TRUE

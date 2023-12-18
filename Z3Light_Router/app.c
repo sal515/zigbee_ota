@@ -56,6 +56,43 @@
 static sl_zigbee_event_t commissioning_led_event;
 static sl_zigbee_event_t finding_and_binding_event;
 
+
+#include "ota-client-policy-config.h"
+
+#define CUSTOM_LED_BLINK_PERIOD_MS (2000)
+static sl_zigbee_event_t firmware_version_inidication_blink_event;
+
+static uint8_t blink_counter = 0;
+
+static void firmware_version_inidication_blink_event_handler (sl_zigbee_event_t *event)
+{
+  sl_led_state_t led_state = sl_led_get_state (COMMISSIONING_STATUS_LED);
+  sl_zigbee_app_debug_println("\nCOMMISSIONING_STATUS_LED current state is: %u, BlinkCounter:%u",
+                              led_state,
+                              blink_counter);
+
+#if 0 // TEST Blink Counter
+  //  if (blink_counter < (3 * 2)) {
+#else
+  if (blink_counter < (EMBER_AF_PLUGIN_OTA_CLIENT_POLICY_FIRMWARE_VERSION * 2))
+#endif
+    {
+      led_toggle(COMMISSIONING_STATUS_LED);
+      blink_counter++;
+      sl_zigbee_event_set_delay_ms(&firmware_version_inidication_blink_event,
+                                   CUSTOM_LED_BLINK_PERIOD_MS);
+
+    }
+  else
+    {
+      // Reset the counter and deactivate the event to stop blinking
+      blink_counter = 0;
+      sl_zigbee_event_set_inactive(&firmware_version_inidication_blink_event);
+    }
+
+}
+
+
 //---------------
 // Event handlers
 
@@ -121,6 +158,8 @@ void emberAfMainInitCallback(void)
   sl_zigbee_event_init(&finding_and_binding_event, finding_and_binding_event_handler);
 
   sl_zigbee_event_set_active(&commissioning_led_event);
+
+  sl_zigbee_event_init(&firmware_version_inidication_blink_event, firmware_version_inidication_blink_event_handler);
 }
 
 /** @brief Complete network steering.
@@ -263,9 +302,9 @@ void emberAfRadioNeedsCalibratingCallback(void)
  *
    @param[out] handle             Pointer to button instance
  ******************************************************************************/
-void sl_button_on_change(const sl_button_t *handle)
+void sl_button_on_change (const sl_button_t *handle)
 {
-#if 0
+#if 0 // Commenting out the default behavior of Z3Light example - not needed in this demonstration
   if (sl_button_get_state(handle) == SL_SIMPLE_BUTTON_RELEASED) {
     sl_zigbee_event_set_active(&finding_and_binding_event);
     #ifdef SL_CATALOG_ZIGBEE_FORCE_SLEEP_AND_WAKEUP_PRESENT
@@ -278,6 +317,10 @@ void sl_button_on_change(const sl_button_t *handle)
           == 2&& sl_button_get_state(handle) == SL_SIMPLE_BUTTON_RELEASED)
     {
       sl_zigbee_app_debug_println("\nButton 0 is pressed");
+
+      blink_counter = 0; // Reset firmware version blink counter
+      sl_zigbee_event_set_active(&firmware_version_inidication_blink_event);
+
     }
   else if (SL_SIMPLE_BUTTON_GET_PORT(handle->context) == GPIO_PORTB
       && SL_SIMPLE_BUTTON_GET_PIN(handle->context)
